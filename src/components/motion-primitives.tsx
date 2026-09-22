@@ -1,7 +1,8 @@
-import { motion, useReducedMotion } from "motion/react";
-import type { ReactNode } from "react";
+import { motion, useInView, useReducedMotion } from "motion/react";
+import { useRef, type ReactNode } from "react";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
+const VIEW = { once: true, margin: "-60px 0px -60px 0px" } as const;
 
 /** Bloco que entra com fade + slide quando aparece no ecrã. */
 export function Reveal({
@@ -13,16 +14,19 @@ export function Reveal({
   children: ReactNode;
   delay?: number;
   y?: number;
-  className?: string;
+  className?: string | undefined;
 }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, VIEW);
   const reduced = useReducedMotion();
+  const show = inView || reduced;
 
   return (
     <motion.div
+      ref={ref}
       className={className}
-      initial={reduced ? { opacity: 1 } : { opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
+      initial={false}
+      animate={{ opacity: show ? 1 : 0, y: show ? 0 : y }}
       transition={{ duration: 0.7, delay, ease: EASE }}
     >
       {children}
@@ -30,22 +34,26 @@ export function Reveal({
   );
 }
 
-/** Contentor com stagger para os filhos. */
+/** Contentor com stagger para os filhos (usar com RevealItem). */
 export function RevealGroup({
   children,
   className,
   stagger = 0.1,
 }: {
   children: ReactNode;
-  className?: string;
+  className?: string | undefined;
   stagger?: number;
 }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, VIEW);
+  const reduced = useReducedMotion();
+
   return (
     <motion.div
+      ref={ref}
       className={className}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
+      animate={inView || reduced ? "visible" : "hidden"}
       variants={{
         hidden: {},
         visible: { transition: { staggerChildren: stagger } },
@@ -61,15 +69,13 @@ export function RevealItem({
   className,
 }: {
   children: ReactNode;
-  className?: string;
+  className?: string | undefined;
 }) {
-  const reduced = useReducedMotion();
-
   return (
     <motion.div
       className={className}
       variants={{
-        hidden: reduced ? { opacity: 1 } : { opacity: 0, y: 32 },
+        hidden: { opacity: 0, y: 32 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } },
       }}
     >
@@ -87,22 +93,24 @@ export function MaskedHeading({
   as: Tag = "h1",
 }: {
   lines: ReactNode[];
-  className?: string;
-  lineClassName?: string;
+  className?: string | undefined;
+  lineClassName?: string | undefined;
   delay?: number;
   as?: "h1" | "h2" | "h3";
 }) {
+  const ref = useRef<HTMLHeadingElement>(null);
+  const inView = useInView(ref, VIEW);
   const reduced = useReducedMotion();
+  const show = inView || reduced;
 
   return (
-    <Tag className={className}>
+    <Tag className={className} ref={ref}>
       {lines.map((line, i) => (
         <span className="mask-line" key={i}>
           <motion.span
             className={`block ${lineClassName ?? ""}`}
-            initial={reduced ? { opacity: 1 } : { y: "110%", opacity: 0 }}
-            whileInView={{ y: "0%", opacity: 1 }}
-            viewport={{ once: true, margin: "-60px" }}
+            initial={false}
+            animate={{ y: show ? "0%" : "110%", opacity: show ? 1 : 0 }}
             transition={{ duration: 0.85, delay: delay + i * 0.1, ease: EASE }}
           >
             {line}
