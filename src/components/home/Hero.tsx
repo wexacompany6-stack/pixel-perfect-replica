@@ -68,7 +68,7 @@ export function Hero() {
               experiências <span className="text-lime">digitais</span>
             </>,
           ]}
-          className="mt-6 max-w-4xl font-display text-[clamp(3rem,8vw,7rem)] leading-[0.92] font-extrabold tracking-tight uppercase"
+          className="mt-6 max-w-5xl font-display text-[clamp(2.6rem,6.6vw,6rem)] leading-[0.92] font-extrabold tracking-tight uppercase"
         />
 
         <motion.p

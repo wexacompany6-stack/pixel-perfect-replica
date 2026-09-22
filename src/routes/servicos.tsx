@@ -28,7 +28,7 @@ export const Route = createFileRoute("/servicos")({
       },
     ],
   }),
-  component: Servicos;
+  component: Servicos,
 });
 
 const imagens = [serviceWeb, serviceDesign, serviceMarketing];
