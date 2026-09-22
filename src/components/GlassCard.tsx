@@ -11,9 +11,9 @@ export function GlassCard({
   spotlight = true,
 }: {
   children: ReactNode;
-  className?: string;
-  highlight?: boolean;
-  spotlight?: boolean;
+  className?: string | undefined;
+  highlight?: boolean | undefined;
+  spotlight?: boolean | undefined;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState<{ x: number; y: number } | null>(null);
