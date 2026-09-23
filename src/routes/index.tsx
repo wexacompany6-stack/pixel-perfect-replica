@@ -193,7 +193,12 @@ function Home() {
 
       {/* Números */}
       <section className="mx-auto max-w-7xl px-6 py-24">
-        <RevealGroup className="grid gap-10 border-y border-border py-14 sm:grid-cols-2 lg:grid-cols-4">
+        <MaskedHeading
+          as="h2"
+          lines={["Resultados que", "falam por nós"]}
+          className="font-display text-[clamp(2rem,4.6vw,3.4rem)] leading-[1] font-extrabold tracking-tight uppercase"
+        />
+        <RevealGroup className="mt-14 grid gap-10 border-y border-border py-14 sm:grid-cols-2 lg:grid-cols-4">
           {numeros.map((n) => (
             <RevealItem key={n.label}>
               <p className="font-display text-[clamp(2.6rem,6vw,4.5rem)] leading-none font-extrabold tracking-tight text-lime">
@@ -211,10 +216,10 @@ function Home() {
       <section className="mx-auto max-w-7xl px-6 py-16">
         <MaskedHeading
           as="h2"
-          lines={["Porquê a WEXA"]}
+          lines={["Porquê trabalhar", "com a WEXA"]}
           className="font-display text-[clamp(2rem,4.6vw,3.4rem)] leading-[1] font-extrabold tracking-tight uppercase"
         />
-        <RevealGroup className="mt-12 grid gap-5 lg:grid-cols-4 lg:grid-rows-2">
+        <RevealGroup className="mt-12 grid gap-5 lg:auto-rows-fr lg:grid-cols-4">
           {diferenciais.map((d) => (
             <RevealItem key={d.titulo} className={d.span}>
               <GlassCard className="flex h-full flex-col justify-between p-8">
@@ -240,6 +245,12 @@ function Home() {
           lines={["Como trabalhamos"]}
           className="font-display text-[clamp(2rem,4.6vw,3.4rem)] leading-[1] font-extrabold tracking-tight uppercase"
         />
+        <Reveal delay={0.15}>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
+            Um processo simples, transparente e sem surpresas.
+          </p>
+        </Reveal>
+
 
         <div ref={processRef} className="relative mt-16">
           <div className="absolute top-3 left-3 h-[calc(100%-1.5rem)] w-px bg-border lg:top-3 lg:left-0 lg:h-px lg:w-full">
