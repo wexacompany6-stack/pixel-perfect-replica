@@ -117,7 +117,7 @@ export function Hero() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, i) => (
             <motion.div
-              key={stat.texto[0]}
+              key={stat.titulo}
               initial={reduced ? { opacity: 1 } : { opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.85 + i * 0.1, ease: EASE }}
@@ -125,9 +125,10 @@ export function Hero() {
               <GlassCard className="h-full p-5">
                 <stat.icon className="size-5 text-lime" />
                 <p className="mt-4 font-display text-sm leading-snug font-bold tracking-tight">
-                  {stat.texto[0]}
-                  <br />
-                  {stat.texto[1]}
+                  {stat.titulo}
+                </p>
+                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                  {stat.texto}
                 </p>
               </GlassCard>
             </motion.div>

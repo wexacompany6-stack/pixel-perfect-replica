@@ -12,21 +12,27 @@ export function Footer() {
               WEXA<span className="text-lime">.</span>
             </span>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Agência digital moçambicana. Tecnologia, design e marketing para
-              resolver problemas reais de negócios.
+              WEXA — Digital Agency
+              <br />
+              Web · Design · Marketing
             </p>
             <p className="mt-4 font-display text-sm font-bold tracking-tight text-lime">
-              Transformamos negócios em experiências digitais
+              Transformamos negócios em experiências digitais.
             </p>
           </div>
 
           <div>
             <h3 className="font-display text-xs font-bold tracking-[0.22em] uppercase">
-              Navegação
+              Serviços
             </h3>
             <ul className="mt-5 space-y-3">
-              {navLinks.map((link) => (
-                <li key={link.to}>
+              {[
+                { label: "WEXA WEB", to: "/servicos" },
+                { label: "WEXA DESIGN", to: "/servicos" },
+                { label: "WEXA MARKETING", to: "/servicos" },
+                { label: "Pacotes e Preços", to: "/precos" },
+              ].map((link) => (
+                <li key={link.label}>
                   <Link
                     to={link.to}
                     className="link-underline text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground"
