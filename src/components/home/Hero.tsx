@@ -9,10 +9,27 @@ import { WexaButton } from "@/components/ui/wexa-button";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const stats = [
-  { icon: Layers, texto: ["Sites que convertem,", "não só que existem"] },
-  { icon: Sparkles, texto: ["Identidade visual que faz", "a marca ser lembrada"] },
-  { icon: LineChart, texto: ["Marketing com relatórios", "reais, não promessas"] },
-  { icon: LifeBuoy, texto: ["Suporte contínuo", "após o lançamento"] },
+  {
+    icon: Layers,
+    titulo: "Sites que convertem",
+    texto:
+      "Não construímos páginas bonitas. Construímos páginas que trazem clientes.",
+  },
+  {
+    icon: Sparkles,
+    titulo: "Identidade memorável",
+    texto: "Uma marca que é reconhecida antes mesmo de lerem o nome.",
+  },
+  {
+    icon: LineChart,
+    titulo: "Marketing com números",
+    texto: "Relatórios reais todos os meses. Sem promessas vazias.",
+  },
+  {
+    icon: LifeBuoy,
+    titulo: "Suporte contínuo",
+    texto: "O nosso trabalho não termina no lançamento.",
+  },
 ];
 
 export function Hero() {
