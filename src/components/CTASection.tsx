@@ -3,7 +3,7 @@ import { WexaButton } from "@/components/ui/wexa-button";
 
 export function CTASection({
   title = ["Pronto para transformar", "a sua presença digital?"],
-  subtitle = "Conte-nos o problema. Respondemos com uma proposta clara, prazos definidos e um plano que faz sentido para o seu negócio.",
+  subtitle = "Conte-nos sobre o seu negócio. A primeira conversa não custa nada.",
 }: {
   title?: string[];
   subtitle?: string;

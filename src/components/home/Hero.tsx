@@ -9,10 +9,27 @@ import { WexaButton } from "@/components/ui/wexa-button";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const stats = [
-  { icon: Layers, texto: ["Sites que convertem,", "não só que existem"] },
-  { icon: Sparkles, texto: ["Identidade visual que faz", "a marca ser lembrada"] },
-  { icon: LineChart, texto: ["Marketing com relatórios", "reais, não promessas"] },
-  { icon: LifeBuoy, texto: ["Suporte contínuo", "após o lançamento"] },
+  {
+    icon: Layers,
+    titulo: "Sites que convertem",
+    texto:
+      "Não construímos páginas bonitas. Construímos páginas que trazem clientes.",
+  },
+  {
+    icon: Sparkles,
+    titulo: "Identidade memorável",
+    texto: "Uma marca que é reconhecida antes mesmo de lerem o nome.",
+  },
+  {
+    icon: LineChart,
+    titulo: "Marketing com números",
+    texto: "Relatórios reais todos os meses. Sem promessas vazias.",
+  },
+  {
+    icon: LifeBuoy,
+    titulo: "Suporte contínuo",
+    texto: "O nosso trabalho não termina no lançamento.",
+  },
 ];
 
 export function Hero() {
@@ -100,7 +117,7 @@ export function Hero() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, i) => (
             <motion.div
-              key={stat.texto[0]}
+              key={stat.titulo}
               initial={reduced ? { opacity: 1 } : { opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.85 + i * 0.1, ease: EASE }}
@@ -108,9 +125,10 @@ export function Hero() {
               <GlassCard className="h-full p-5">
                 <stat.icon className="size-5 text-lime" />
                 <p className="mt-4 font-display text-sm leading-snug font-bold tracking-tight">
-                  {stat.texto[0]}
-                  <br />
-                  {stat.texto[1]}
+                  {stat.titulo}
+                </p>
+                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                  {stat.texto}
                 </p>
               </GlassCard>
             </motion.div>
