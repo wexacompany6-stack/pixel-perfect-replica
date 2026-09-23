@@ -1,6 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, useScroll, useSpring } from "motion/react";
-import { ArrowUpRight, Clock, Layers3, MessageSquare, Workflow } from "lucide-react";
+import {
+  ArrowUpRight,
+  Clock,
+  Layers3,
+  MapPin,
+  MessageSquare,
+  TrendingUp,
+  Workflow,
+} from "lucide-react";
 import { useRef } from "react";
 import { Hero } from "@/components/home/Hero";
 import { Marquee } from "@/components/Marquee";
