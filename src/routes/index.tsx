@@ -114,18 +114,19 @@ function Home() {
         <div className="grid gap-12 lg:grid-cols-2">
           <MaskedHeading
             as="h2"
-            lines={["Uma agência", "feita para", "resolver problemas"]}
+            lines={["Uma agência que", "resolve problemas", "digitais de negócios"]}
             className="font-display text-[clamp(2rem,4.6vw,3.6rem)] leading-[1] font-extrabold tracking-tight uppercase"
           />
           <Reveal delay={0.15} className="lg:pt-2">
             <p className="text-base leading-relaxed text-muted-foreground">
               A WEXA é uma agência digital focada no fortalecimento da presença digital
-              de empresas através de websites, landing pages, lojas online, design
-              gráfico, identidade visual e marketing digital.
+              de empresas e organizações — através de websites, landing pages, lojas
+              online, design gráfico, identidade visual e marketing digital.
             </p>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              Não fazemos "artes e sites". Estruturamos a forma como o seu negócio é
-              encontrado e escolhido no ambiente digital.
+              Não somos uma empresa que simplesmente "faz artes e sites". Trabalhamos com
+              estratégia, do primeiro rascunho ao resultado final, porque entendemos que
+              por trás de cada projecto existe um negócio que precisa de crescer.
             </p>
             <div className="mt-8">
               <WexaButton to="/sobre" variant="glass">
@@ -145,9 +146,16 @@ function Home() {
         </Reveal>
         <MaskedHeading
           as="h2"
-          lines={["Três frentes,", "um só objectivo"]}
+          lines={["O que fazemos"]}
           className="mt-4 max-w-2xl font-display text-[clamp(2rem,4.6vw,3.4rem)] leading-[1] font-extrabold tracking-tight uppercase"
         />
+        <Reveal delay={0.15}>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
+            Três frentes que trabalham juntas para construir uma presença digital
+            completa e coerente.
+          </p>
+        </Reveal>
+
 
         <RevealGroup className="mt-14 grid gap-5 lg:grid-cols-3">
           {servicos.map((servico) => (
@@ -165,17 +173,17 @@ function Home() {
                 <h3 className="mt-6 font-display text-xl font-bold tracking-tight uppercase">
                   {servico.nome}
                 </h3>
-                <p className="mt-2 text-xs font-semibold tracking-[0.12em] text-muted-foreground uppercase">
+                <p className="mt-3 font-display text-sm leading-snug font-bold tracking-tight">
                   {servico.resumo}
                 </p>
-                <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                   {servico.descricao}
                 </p>
                 <Link
                   to="/servicos"
                   className="link-underline mt-8 inline-flex w-fit items-center gap-2 font-display text-xs font-bold tracking-[0.18em] uppercase"
                 >
-                  Ver detalhes <ArrowUpRight className="size-4 text-lime" />
+                  {servico.linkLabel} <ArrowUpRight className="size-4 text-lime" />
                 </Link>
               </GlassCard>
             </RevealItem>
