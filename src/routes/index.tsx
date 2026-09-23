@@ -43,27 +43,44 @@ export const Route = createFileRoute("/")({
 const diferenciais = [
   {
     icon: Layers3,
-    titulo: "Tecnologia + Design + Marketing",
+    titulo: "Tudo num só lugar",
     texto:
-      "Uma só equipa para toda a presença digital. Sem intermediários, sem versões desalinhadas da sua marca.",
+      "Web, design e marketing sob o mesmo tecto. Em vez de coordenar três fornecedores diferentes, tem uma equipa que fala a mesma linguagem visual do logótipo ao clique final.",
     span: "lg:col-span-2 lg:row-span-2",
   },
   {
     icon: Workflow,
     titulo: "Processos claros",
-    texto: "Sabe sempre em que fase está o projecto e o que vem a seguir.",
+    texto:
+      "Sabe exactamente o que vai receber, quando vai receber e quanto vai custar. Sem letras pequenas, sem surpresas a meio do projecto.",
+    span: "",
+  },
+  {
+    icon: Clock,
+    titulo: "Prazos cumpridos",
+    texto:
+      "Cada projecto entra numa agenda de produção com data definida. Cumprir prazos não é diferencial, é obrigação.",
     span: "",
   },
   {
     icon: MessageSquare,
     titulo: "Suporte pós-entrega",
-    texto: "Continuamos disponíveis depois do lançamento.",
+    texto:
+      "Todos os pacotes incluem acompanhamento depois do lançamento. E quando precisar de mais, temos planos de manutenção mensal.",
     span: "",
   },
   {
-    icon: Clock,
-    titulo: "Entrega dentro do prazo",
-    texto: "Prazos acordados no início e cumpridos até ao fim.",
+    icon: TrendingUp,
+    titulo: "Pensado para crescer",
+    texto:
+      "Construímos estruturas escaláveis. O site que fazemos hoje acompanha o seu negócio quando ele for maior.",
+    span: "",
+  },
+  {
+    icon: MapPin,
+    titulo: "Feito para Moçambique",
+    texto:
+      "Preços, métodos de pagamento e soluções adaptadas à realidade do mercado nacional. Incluindo M-Pesa e e-Mola.",
     span: "lg:col-span-2",
   },
 ];

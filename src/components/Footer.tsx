@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, Mail, Phone } from "lucide-react";
-import { contacto, navLinks } from "@/data/site";
+import { contacto } from "@/data/site";
 
 export function Footer() {
   return (
