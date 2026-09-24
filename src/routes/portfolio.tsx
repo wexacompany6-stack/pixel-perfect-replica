@@ -102,8 +102,11 @@ function Portfolio() {
                   <h2 className="mt-2 font-display text-lg leading-tight font-bold tracking-tight">
                     {p.titulo}
                   </h2>
-                  <p className="mt-1 text-xs text-muted-foreground opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  <p className="mt-1 text-xs font-semibold tracking-[0.1em] text-muted-foreground uppercase">
                     {p.tipo}
+                  </p>
+                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    {p.texto}
                   </p>
                 </div>
                 <ArrowUpRight className="absolute top-5 right-5 size-5 text-lime opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -111,11 +114,18 @@ function Portfolio() {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {lista.length === 0 && (
+          <p className="mt-16 max-w-xl text-sm leading-relaxed text-muted-foreground">
+            Ainda estamos a preparar esta secção. Entretanto, fale connosco — teremos todo
+            o gosto em mostrar exemplos do nosso trabalho.
+          </p>
+        )}
       </section>
 
       <CTASection
         title={["O próximo projecto", "pode ser o seu"]}
-        subtitle="Conte-nos o que precisa e mostramos como abordaríamos o seu caso."
+        subtitle="Conte-nos sobre o seu negócio. A primeira conversa não custa nada."
       />
     </>
   );

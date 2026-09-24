@@ -65,19 +65,21 @@ const canais = [
 ];
 
 const campos = [
-  { name: "nome", label: "Nome", type: "text" },
-  { name: "email", label: "E-mail", type: "email" },
-  { name: "telefone", label: "Telefone", type: "tel" },
+  { name: "nome", label: "Nome", type: "text", placeholder: "O seu nome completo" },
+  { name: "email", label: "E-mail", type: "email", placeholder: "exemplo@email.com" },
+  { name: "telefone", label: "Telefone", type: "tel", placeholder: "+258 ..." },
 ] as const;
 
 function Field({
   name,
   label,
   type,
+  placeholder,
 }: {
   name: string;
   label: string;
   type: string;
+  placeholder: string;
 }) {
   return (
     <div className="relative">
@@ -105,10 +107,10 @@ function Contacto() {
   return (
     <>
       <PageHero
-        eyebrow="Contacto · WEXA"
+        eyebrow="Contacto"
         image={aboutHero}
-        lines={["Vamos falar", "do seu projecto"]}
-        subtitle="Responda a três perguntas simples e voltamos com uma proposta objectiva."
+        lines={["Vamos começar?"]}
+        subtitle="Conte-nos sobre o seu negócio. Respondemos a todas as mensagens — normalmente no mesmo dia."
       />
 
       <section className="mx-auto max-w-7xl px-6 py-20">
@@ -143,8 +145,11 @@ function Contacto() {
           <Reveal delay={0.15}>
             <GlassCard spotlight={false} className="p-7 sm:p-9">
               <h2 className="font-display text-xl font-bold tracking-tight uppercase">
-                Enviar mensagem
+                Envie-nos uma mensagem
               </h2>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                Preencha os campos abaixo e entraremos em contacto consigo.
+              </p>
               <form
                 className="mt-8 space-y-4"
                 onSubmit={(e) => {
@@ -154,9 +159,9 @@ function Contacto() {
                   setTimeout(() => {
                     setEnviando(false);
                     form.reset();
-                    toast.success("Mensagem registada", {
+                    toast.success("Mensagem enviada", {
                       description:
-                        "Para resposta imediata, fale connosco pelo WhatsApp.",
+                        "Obrigado pelo contacto — respondemos em breve.",
                     });
                   }, 600);
                 }}
