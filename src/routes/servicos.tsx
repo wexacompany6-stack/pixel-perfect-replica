@@ -14,18 +14,20 @@ import { servicos } from "@/data/site";
 export const Route = createFileRoute("/servicos")({
   head: () => ({
     meta: [
-      { title: "Serviços — Web, Design e Marketing Digital | WEXA" },
+      { title: "Serviços — Websites, Design e Marketing Digital | WEXA" },
       {
         name: "description",
         content:
-          "Websites e lojas online, identidade visual e gestão de marketing digital. Conheça as três frentes de trabalho da WEXA.",
+          "Desenvolvimento de websites, landing pages e lojas online, identidade visual completa e gestão de redes sociais.",
       },
       { property: "og:title", content: "Serviços da WEXA — Web, Design e Marketing" },
       {
         property: "og:description",
         content:
-          "Landing pages, sites institucionais, e-commerce, identidade visual, redes sociais e campanhas pagas.",
+          "Desenvolvimento de websites, landing pages e lojas online, identidade visual completa e gestão de redes sociais.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Servicos,
