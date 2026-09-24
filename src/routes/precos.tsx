@@ -14,18 +14,20 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/precos")({
   head: () => ({
     meta: [
-      { title: "Pacotes e Preços — Web, Design e Marketing | WEXA" },
+      { title: "Pacotes e Preços — WEXA | Sites a partir de 14.900 MT" },
       {
         name: "description",
         content:
-          "Preços transparentes em Meticais para websites, identidade visual e gestão de marketing digital. Sinal de 50% e 50% na entrega.",
+          "Preços claros e adaptados ao mercado moçambicano para websites, identidade visual e gestão de redes sociais.",
       },
       { property: "og:title", content: "Pacotes e Preços — WEXA" },
       {
         property: "og:description",
         content:
-          "Landing pages desde 14.900 MT, identidade visual desde 7.900 MT e marketing desde 6.900 MT/mês.",
+          "Preços claros e adaptados ao mercado moçambicano para websites, identidade visual e gestão de redes sociais.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Precos,
@@ -44,10 +46,10 @@ function Precos() {
   return (
     <>
       <PageHero
-        eyebrow="Pacotes · WEXA"
+        eyebrow="Pacotes e Preços"
         image={aboutHero}
-        lines={["Preços claros,", "sem surpresas"]}
-        subtitle="Escolha o ponto de partida. Qualquer pacote pode ser ajustado ao que o seu negócio precisa."
+        lines={["Investimento claro,", "sem surpresas"]}
+        subtitle="Preços pensados para a realidade do mercado moçambicano. Escolha o pacote certo para a fase em que o seu negócio está agora."
       />
 
       <section className="mx-auto max-w-7xl px-6 py-20">
@@ -107,7 +109,10 @@ function Precos() {
                   <p className="mt-1 text-xs font-semibold tracking-[0.14em] text-muted-foreground uppercase">
                     {plano.subtitulo}
                   </p>
-                  <p className="mt-8 font-display text-3xl leading-none font-extrabold tracking-tight text-lime">
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    {plano.resumo}
+                  </p>
+                  <p className="mt-6 font-display text-3xl leading-none font-extrabold tracking-tight text-lime">
                     {plano.preco}
                   </p>
                   <ul className="mt-8 space-y-3">
@@ -134,17 +139,33 @@ function Precos() {
         </AnimatePresence>
 
         <Reveal delay={0.1}>
-          <p className="mt-14 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            <span className="text-foreground">Pagamento:</span> sinal de 50% no início do
-            projecto e 50% na entrega. Pagamentos via M-Pesa, e-Mola ou transferência
-            bancária.
-          </p>
+          <div className="mt-14 max-w-2xl space-y-4 text-sm leading-relaxed text-muted-foreground">
+            <p className="font-display text-xs font-bold tracking-[0.2em] text-foreground uppercase">
+              Como funciona o pagamento
+            </p>
+            <p>
+              Sinal de 50% no início do projecto, para reservar a vaga na agenda de
+              produção. Os restantes 50% na entrega final. Pagamentos aceites via{" "}
+              <span className="text-foreground">M-Pesa</span>,{" "}
+              <span className="text-foreground">e-Mola</span> ou{" "}
+              <span className="text-foreground">transferência bancária</span>.
+            </p>
+            <p>
+              Nos pacotes de marketing, a mensalidade é paga antecipadamente, com contrato
+              inicial mínimo de 3 meses. Pagamento trimestral antecipado tem 5% de
+              desconto.
+            </p>
+            <p>
+              O orçamento investido em anúncios é pago à parte, directamente às
+              plataformas.
+            </p>
+          </div>
         </Reveal>
       </section>
 
       <CTASection
-        title={["Não sabe qual", "pacote escolher?"]}
-        subtitle="Diga-nos o objectivo do negócio e recomendamos o caminho mais directo."
+        title={["Ainda com dúvidas", "sobre qual escolher?"]}
+        subtitle="Fale connosco e ajudamos a encontrar o pacote certo para o seu momento."
       />
     </>
   );

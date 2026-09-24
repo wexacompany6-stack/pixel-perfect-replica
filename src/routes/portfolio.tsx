@@ -14,17 +14,20 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfólio — Projectos de Web, Design e Marketing | WEXA" },
+      { title: "Portfólio — Projectos WEXA | Agência Digital" },
       {
         name: "description",
         content:
-          "Uma selecção de projectos da WEXA: sites institucionais, lojas online, identidades visuais e gestão de redes sociais.",
+          "Conheça alguns dos projectos de web, design e marketing digital desenvolvidos pela WEXA.",
       },
-      { property: "og:title", content: "Portfólio da WEXA" },
+      { property: "og:title", content: "Portfólio — Projectos WEXA" },
       {
         property: "og:description",
-        content: "Projectos de web, design e marketing digital feitos em Moçambique.",
+        content:
+          "Conheça alguns dos projectos de web, design e marketing digital desenvolvidos pela WEXA.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Portfolio,
@@ -46,10 +49,10 @@ function Portfolio() {
   return (
     <>
       <PageHero
-        eyebrow="Portfólio · WEXA"
+        eyebrow="Portfólio"
         image={aboutHero}
-        lines={["Projectos que", "resolvem problemas"]}
-        subtitle="Uma selecção de trabalhos em web, design e marketing para empresas de vários sectores."
+        lines={["Projectos que", "falam por nós"]}
+        subtitle="Cada marca tem uma história. Estas são algumas das que ajudámos a contar."
       />
 
       <section className="mx-auto max-w-7xl px-6 py-20">
@@ -99,8 +102,11 @@ function Portfolio() {
                   <h2 className="mt-2 font-display text-lg leading-tight font-bold tracking-tight">
                     {p.titulo}
                   </h2>
-                  <p className="mt-1 text-xs text-muted-foreground opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  <p className="mt-1 text-xs font-semibold tracking-[0.1em] text-muted-foreground uppercase">
                     {p.tipo}
+                  </p>
+                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    {p.texto}
                   </p>
                 </div>
                 <ArrowUpRight className="absolute top-5 right-5 size-5 text-lime opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -108,11 +114,18 @@ function Portfolio() {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {lista.length === 0 && (
+          <p className="mt-16 max-w-xl text-sm leading-relaxed text-muted-foreground">
+            Ainda estamos a preparar esta secção. Entretanto, fale connosco — teremos todo
+            o gosto em mostrar exemplos do nosso trabalho.
+          </p>
+        )}
       </section>
 
       <CTASection
         title={["O próximo projecto", "pode ser o seu"]}
-        subtitle="Conte-nos o que precisa e mostramos como abordaríamos o seu caso."
+        subtitle="Conte-nos sobre o seu negócio. A primeira conversa não custa nada."
       />
     </>
   );

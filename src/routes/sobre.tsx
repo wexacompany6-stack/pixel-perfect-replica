@@ -15,18 +15,20 @@ import { atributos } from "@/data/site";
 export const Route = createFileRoute("/sobre")({
   head: () => ({
     meta: [
-      { title: "Sobre a WEXA — Tecnologia, Design e Marketing | WEXA" },
+      { title: "Sobre a WEXA — Agência Digital | Moçambique" },
       {
         name: "description",
         content:
-          "Conheça a WEXA: uma agência digital moçambicana que une tecnologia, design e marketing para resolver problemas reais de negócios.",
+          "Conheça a agência que une tecnologia, design e marketing para resolver problemas reais de negócios no ambiente digital.",
       },
-      { property: "og:title", content: "Sobre a WEXA — Digital Agency" },
+      { property: "og:title", content: "Sobre a WEXA — Agência Digital" },
       {
         property: "og:description",
         content:
-          "Missão, visão, valores e posicionamento da WEXA, agência digital em Moçambique.",
+          "Conheça a agência que une tecnologia, design e marketing para resolver problemas reais de negócios no ambiente digital.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Sobre,
@@ -37,19 +39,19 @@ const pilares = [
     icon: Compass,
     titulo: "Missão",
     texto:
-      "Fortalecer a presença digital de empresas com soluções que geram resultados concretos e mensuráveis.",
+      "Ajudar negócios a saírem de uma presença digital limitada para uma presença digital profissional, estratégica e preparada para gerar resultados.",
   },
   {
     icon: Eye,
     titulo: "Visão",
     texto:
-      "Ser a referência em Moçambique quando uma empresa precisa de crescer no ambiente digital.",
+      "Ser a referência em soluções digitais em Moçambique, acompanhando o crescimento dos nossos clientes e crescendo com eles.",
   },
   {
     icon: Gem,
     titulo: "Valores",
     texto:
-      "Clareza, compromisso com prazos, qualidade sem atalhos e honestidade em cada proposta.",
+      "Compromisso · Transparência · Qualidade · Estratégia · Resultados",
   },
 ];
 
@@ -57,28 +59,36 @@ function Sobre() {
   return (
     <>
       <PageHero
-        eyebrow="Sobre · WEXA"
+        eyebrow="Sobre nós"
         image={aboutHero}
-        lines={["Somos a agência", "que pensa no negócio", "antes do layout"]}
-        subtitle="A WEXA nasceu para dar às empresas moçambicanas uma presença digital à altura do que elas realmente oferecem."
+        lines={["Construímos marcas", "preparadas", "para o digital"]}
+        subtitle="Conheça a agência que une tecnologia, design e marketing para resolver problemas reais de negócios."
       />
 
       <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="grid gap-12 lg:grid-cols-2">
           <MaskedHeading
             as="h2"
-            lines={["Quem somos"]}
+            lines={["A WEXA em", "poucas palavras"]}
             className="font-display text-[clamp(2rem,4.6vw,3.4rem)] leading-[1] font-extrabold tracking-tight uppercase"
           />
           <Reveal delay={0.15}>
             <p className="text-base leading-relaxed text-muted-foreground">
-              Somos uma agência digital focada em websites, landing pages, lojas online,
-              design gráfico, identidade visual e marketing digital. Trabalhamos com
-              empresas que querem deixar de improvisar a sua presença online.
+              A WEXA nasceu para ajudar empresas e organizações a fortalecerem a sua
+              presença no ambiente digital. Trabalhamos com criação de websites, landing
+              pages, lojas online, design gráfico, identidade visual, marketing digital e
+              gestão de redes sociais.
             </p>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              Cada projecto começa por entender o negócio: o que vende, para quem, e o
-              que está a travar o crescimento. Só depois falamos de design e tecnologia.
+              Somos uma agência jovem, mas construída com estrutura de empresa: processos
+              definidos, prazos claros e padrões de qualidade que se mantêm de projecto
+              para projecto — seja para um pequeno negócio a começar ou para uma empresa
+              já estabelecida.
+            </p>
+            <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+              Acreditamos que presença digital não é ter um site bonito ou publicar de vez
+              em quando. É ter um sistema que funciona em conjunto: uma marca
+              reconhecível, uma plataforma que converte e uma comunicação constante.
             </p>
           </Reveal>
         </div>
@@ -140,24 +150,29 @@ function Sobre() {
         <div className="grid gap-12 lg:grid-cols-2">
           <MaskedHeading
             as="h2"
-            lines={["Visão de", "crescimento"]}
+            lines={["Construídos para crescer", "— e para fazer crescer"]}
             className="font-display text-[clamp(2rem,4.6vw,3.4rem)] leading-[1] font-extrabold tracking-tight uppercase"
           />
           <Reveal delay={0.15}>
             <p className="text-base leading-relaxed text-muted-foreground">
-              A WEXA está estruturada para crescer: equipas multidisciplinares por área
-              — web, design e marketing — com processos que se repetem sem perder
-              qualidade quando o volume aumenta.
+              A WEXA foi desenhada com uma estrutura escalável, preparada para grande
+              volume de projectos, equipas multidisciplinares e clientes corporativos e
+              premium.
             </p>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              Esse modelo permite-nos servir desde pequenos negócios em arranque até
-              clientes corporativos e premium, com o mesmo nível de exigência.
+              Isso significa duas coisas para quem trabalha connosco: primeiro, que temos
+              capacidade de acompanhar projectos de diferentes dimensões. Segundo, que
+              aquilo que construímos hoje para o seu negócio foi pensado para continuar a
+              funcionar quando ele for maior.
             </p>
           </Reveal>
         </div>
       </section>
 
-      <CTASection />
+      <CTASection
+        title={["Vamos conversar", "sobre o seu projecto?"]}
+        subtitle="Conte-nos sobre o seu negócio. A primeira conversa não custa nada."
+      />
     </>
   );
 }

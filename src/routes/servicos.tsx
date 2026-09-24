@@ -14,18 +14,20 @@ import { servicos } from "@/data/site";
 export const Route = createFileRoute("/servicos")({
   head: () => ({
     meta: [
-      { title: "Serviços — Web, Design e Marketing Digital | WEXA" },
+      { title: "Serviços — Websites, Design e Marketing Digital | WEXA" },
       {
         name: "description",
         content:
-          "Websites e lojas online, identidade visual e gestão de marketing digital. Conheça as três frentes de trabalho da WEXA.",
+          "Desenvolvimento de websites, landing pages e lojas online, identidade visual completa e gestão de redes sociais.",
       },
       { property: "og:title", content: "Serviços da WEXA — Web, Design e Marketing" },
       {
         property: "og:description",
         content:
-          "Landing pages, sites institucionais, e-commerce, identidade visual, redes sociais e campanhas pagas.",
+          "Desenvolvimento de websites, landing pages e lojas online, identidade visual completa e gestão de redes sociais.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Servicos,
@@ -37,10 +39,10 @@ function Servicos() {
   return (
     <>
       <PageHero
-        eyebrow="Serviços · WEXA"
+        eyebrow="Serviços"
         image={aboutHero}
-        lines={["O que fazemos", "pelo seu negócio"]}
-        subtitle="Três frentes que funcionam isoladamente ou em conjunto — dependendo do que o seu negócio precisa agora."
+        lines={["Tudo o que a sua marca", "precisa para existir", "no digital"]}
+        subtitle="Três frentes complementares, uma só direcção: fazer o seu negócio ser encontrado, reconhecido e escolhido."
       />
 
       <div className="mx-auto max-w-7xl space-y-28 px-6 py-24">
@@ -67,28 +69,33 @@ function Servicos() {
               </Reveal>
 
               <div className={invertido ? "lg:order-1" : ""}>
-                <span className="font-display text-5xl font-extrabold tracking-tight text-lime">
-                  {servico.numero}
+                <span className="font-sans text-[10px] font-semibold tracking-[0.3em] text-lime uppercase">
+                  {servico.numero} · {servico.nome}
                 </span>
                 <MaskedHeading
                   as="h2"
-                  lines={[servico.nome]}
-                  className="mt-4 font-display text-[clamp(1.8rem,4.4vw,3rem)] leading-[1] font-extrabold tracking-tight uppercase"
+                  lines={[servico.tituloPagina]}
+                  className="mt-4 font-display text-[clamp(1.7rem,3.8vw,2.6rem)] leading-[1.05] font-extrabold tracking-tight uppercase"
                 />
                 <Reveal delay={0.12}>
-                  <p className="mt-2 text-xs font-semibold tracking-[0.16em] text-muted-foreground uppercase">
-                    {servico.resumo}
-                  </p>
-                  <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground">
-                    {servico.descricao}
-                  </p>
+                  {servico.textoLongo.map((paragrafo) => (
+                    <p
+                      key={paragrafo}
+                      className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground"
+                    >
+                      {paragrafo}
+                    </p>
+                  ))}
 
                   <GlassCard
                     highlight={servico.destaque}
                     spotlight={false}
                     className="mt-8 p-6"
                   >
-                    <ul className="grid gap-3 sm:grid-cols-2">
+                    <p className="font-display text-xs font-bold tracking-[0.2em] uppercase">
+                      {servico.itensTitulo}
+                    </p>
+                    <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                       {servico.itens.map((item) => (
                         <li key={item} className="flex items-start gap-2 text-sm">
                           <Check className="mt-0.5 size-4 shrink-0 text-lime" />
@@ -98,12 +105,18 @@ function Servicos() {
                     </ul>
                   </GlassCard>
 
+                  {servico.inclui && (
+                    <p className="mt-6 max-w-lg text-sm leading-relaxed text-muted-foreground">
+                      {servico.inclui}
+                    </p>
+                  )}
+
                   <div className="mt-8">
                     <WexaButton
                       to="/precos"
                       variant={servico.destaque ? "lime" : "glass"}
                     >
-                      Ver pacotes
+                      {servico.ctaLabel}
                     </WexaButton>
                   </div>
                 </Reveal>
@@ -113,7 +126,10 @@ function Servicos() {
         })}
       </div>
 
-      <CTASection />
+      <CTASection
+        title={["Não sabe por", "onde começar?"]}
+        subtitle="Conte-nos sobre o seu negócio e indicamos o caminho mais directo para os seus objectivos."
+      />
     </>
   );
 }
