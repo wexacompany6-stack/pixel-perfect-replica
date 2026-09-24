@@ -54,7 +54,7 @@ const diferenciais = [
     titulo: "Tudo num só lugar",
     texto:
       "Web, design e marketing sob o mesmo tecto. Em vez de coordenar três fornecedores diferentes, tem uma equipa que fala a mesma linguagem visual do logótipo ao clique final.",
-    span: "lg:col-span-2 lg:row-span-2",
+    span: "lg:col-span-2",
   },
   {
     icon: Workflow,
