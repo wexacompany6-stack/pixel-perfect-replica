@@ -14,17 +14,20 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfólio — Projectos de Web, Design e Marketing | WEXA" },
+      { title: "Portfólio — Projectos WEXA | Agência Digital" },
       {
         name: "description",
         content:
-          "Uma selecção de projectos da WEXA: sites institucionais, lojas online, identidades visuais e gestão de redes sociais.",
+          "Conheça alguns dos projectos de web, design e marketing digital desenvolvidos pela WEXA.",
       },
-      { property: "og:title", content: "Portfólio da WEXA" },
+      { property: "og:title", content: "Portfólio — Projectos WEXA" },
       {
         property: "og:description",
-        content: "Projectos de web, design e marketing digital feitos em Moçambique.",
+        content:
+          "Conheça alguns dos projectos de web, design e marketing digital desenvolvidos pela WEXA.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Portfolio,
