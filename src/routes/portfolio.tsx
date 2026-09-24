@@ -49,10 +49,10 @@ function Portfolio() {
   return (
     <>
       <PageHero
-        eyebrow="Portfólio · WEXA"
+        eyebrow="Portfólio"
         image={aboutHero}
-        lines={["Projectos que", "resolvem problemas"]}
-        subtitle="Uma selecção de trabalhos em web, design e marketing para empresas de vários sectores."
+        lines={["Projectos que", "falam por nós"]}
+        subtitle="Cada marca tem uma história. Estas são algumas das que ajudámos a contar."
       />
 
       <section className="mx-auto max-w-7xl px-6 py-20">

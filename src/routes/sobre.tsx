@@ -15,18 +15,20 @@ import { atributos } from "@/data/site";
 export const Route = createFileRoute("/sobre")({
   head: () => ({
     meta: [
-      { title: "Sobre a WEXA — Tecnologia, Design e Marketing | WEXA" },
+      { title: "Sobre a WEXA — Agência Digital | Moçambique" },
       {
         name: "description",
         content:
-          "Conheça a WEXA: uma agência digital moçambicana que une tecnologia, design e marketing para resolver problemas reais de negócios.",
+          "Conheça a agência que une tecnologia, design e marketing para resolver problemas reais de negócios no ambiente digital.",
       },
-      { property: "og:title", content: "Sobre a WEXA — Digital Agency" },
+      { property: "og:title", content: "Sobre a WEXA — Agência Digital" },
       {
         property: "og:description",
         content:
-          "Missão, visão, valores e posicionamento da WEXA, agência digital em Moçambique.",
+          "Conheça a agência que une tecnologia, design e marketing para resolver problemas reais de negócios no ambiente digital.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Sobre,

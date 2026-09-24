@@ -12,17 +12,20 @@ import { contacto } from "@/data/site";
 export const Route = createFileRoute("/contacto")({
   head: () => ({
     meta: [
-      { title: "Contacto — Fale com a WEXA | Digital Agency" },
+      { title: "Contacto — WEXA Digital Agency | Moçambique" },
       {
         name: "description",
         content:
-          "Fale com a WEXA por WhatsApp, telefone ou e-mail, ou envie a sua mensagem pelo formulário. Respondemos com uma proposta clara.",
+          "Fale connosco sobre o seu projecto digital. Respondemos normalmente no mesmo dia.",
       },
       { property: "og:title", content: "Contacto — WEXA Digital Agency" },
       {
         property: "og:description",
-        content: "+258 87 988 6730 · wexacompany6@gmail.com · @wexacompany",
+        content:
+          "Fale connosco sobre o seu projecto digital. Respondemos normalmente no mesmo dia.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Contacto,

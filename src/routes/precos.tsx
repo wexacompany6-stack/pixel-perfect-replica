@@ -14,18 +14,20 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/precos")({
   head: () => ({
     meta: [
-      { title: "Pacotes e Preços — Web, Design e Marketing | WEXA" },
+      { title: "Pacotes e Preços — WEXA | Sites a partir de 14.900 MT" },
       {
         name: "description",
         content:
-          "Preços transparentes em Meticais para websites, identidade visual e gestão de marketing digital. Sinal de 50% e 50% na entrega.",
+          "Preços claros e adaptados ao mercado moçambicano para websites, identidade visual e gestão de redes sociais.",
       },
       { property: "og:title", content: "Pacotes e Preços — WEXA" },
       {
         property: "og:description",
         content:
-          "Landing pages desde 14.900 MT, identidade visual desde 7.900 MT e marketing desde 6.900 MT/mês.",
+          "Preços claros e adaptados ao mercado moçambicano para websites, identidade visual e gestão de redes sociais.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Precos,
