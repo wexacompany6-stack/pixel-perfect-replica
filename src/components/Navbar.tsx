@@ -2,6 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import logo from "@/assets/wexa-logo.png";
 import { navLinks } from "@/data/site";
 import { WexaButton } from "@/components/ui/wexa-button";
 import { cn } from "@/lib/utils";
@@ -44,10 +45,16 @@ export function Navbar() {
         >
           <Link
             to="/"
-            className="font-display text-xl leading-none font-extrabold tracking-tight text-foreground"
+            className="shrink-0"
             aria-label="WEXA — início"
           >
-            WEXA<span className="text-lime">.</span>
+            <img
+              src={logo}
+              alt="WEXA — Digital Agency"
+              width={576}
+              height={330}
+              className="h-9 w-auto"
+            />
           </Link>
 
           <ul className="hidden items-center gap-1 lg:flex">
@@ -104,9 +111,15 @@ export function Navbar() {
           >
             <div className="flex h-full flex-col px-6 py-6">
               <div className="flex items-center justify-between">
-                <span className="font-display text-xl font-extrabold tracking-tight">
-                  WEXA<span className="text-lime">.</span>
-                </span>
+                <Link to="/" className="shrink-0" aria-label="WEXA — início">
+                  <img
+                    src={logo}
+                    alt="WEXA — Digital Agency"
+                    width={576}
+                    height={330}
+                    className="h-8 w-auto"
+                  />
+                </Link>
                 <motion.button
                   type="button"
                   onClick={() => setOpen(false)}

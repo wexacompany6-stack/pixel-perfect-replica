@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, Mail, Phone } from "lucide-react";
+import logo from "@/assets/wexa-logo.png";
 import { contacto } from "@/data/site";
 
 export function Footer() {
@@ -8,9 +9,13 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <span className="font-display text-2xl font-extrabold tracking-tight">
-              WEXA<span className="text-lime">.</span>
-            </span>
+            <img
+              src={logo}
+              alt="WEXA — Digital Agency"
+              width={576}
+              height={330}
+              className="h-11 w-auto"
+            />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               WEXA — Digital Agency
               <br />
